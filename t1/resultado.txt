@@ -1,32 +1,41 @@
-Tempo global da simulacao: 75054.5148
+Tempo global da simulacao: 50621.9528
 Numeros aleatorios utilizados: 100000
 
 Fila 1 (Fila1) - G/G/1/inf
 Clientes perdidos: 0
 Estado | Tempo acumulado | Probabilidade
-     0 |      37607.5749 |     0.501070
-     1 |      37446.9399 |     0.498930
+     0 |      20320.6127 |     0.401419
+     1 |      26441.9729 |     0.522342
+     2 |       3678.8558 |     0.072673
+     3 |        178.0730 |     0.003518
+     4 |          2.4384 |     0.000048
 Soma das probabilidades: 1.000000
 
 Fila 2 (Fila2) - G/G/2/5
-Clientes perdidos: 0
+Clientes perdidos: 6
 Estado | Tempo acumulado | Probabilidade
-     0 |       6991.8890 |     0.093157
-     1 |      35875.6324 |     0.477994
-     2 |      30582.2829 |     0.407468
-     3 |       1602.7929 |     0.021355
-     4 |          1.9177 |     0.000026
+     0 |      12099.4914 |     0.239017
+     1 |      21077.4695 |     0.416370
+     2 |      12810.2286 |     0.253057
+     3 |       3882.3184 |     0.076692
+     4 |        676.8085 |     0.013370
+     5 |         75.6364 |     0.001494
 Soma das probabilidades: 1.000000
 
 Fila 3 (Fila3) - G/G/2/10
-Clientes perdidos: 0
+Clientes perdidos: 11532
 Estado | Tempo acumulado | Probabilidade
-     0 |      36013.0826 |     0.479826
-     1 |      28971.0307 |     0.386000
-     2 |       8700.9499 |     0.115928
-     3 |       1282.1710 |     0.017083
-     4 |         83.8406 |     0.001117
-     5 |          3.4400 |     0.000046
+     0 |          3.2143 |     0.000063
+     1 |          4.0823 |     0.000081
+     2 |          2.9829 |     0.000059
+     3 |          5.0995 |     0.000101
+     4 |          2.4215 |     0.000048
+     5 |          8.7017 |     0.000172
+     6 |          6.0233 |     0.000119
+     7 |         63.4402 |     0.001253
+     8 |       2711.2234 |     0.053558
+     9 |      16095.1540 |     0.317948
+    10 |      31719.6097 |     0.626598
 Soma das probabilidades: 1.000000
 
-Tempo total de simulacao: 75054.5148
+Tempo total de simulacao: 50621.9528

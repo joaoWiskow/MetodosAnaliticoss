@@ -1,31 +1,38 @@
 # Modelo de simulacao - T1
-# ATENCAO: confira os valores de "roteamento" com a imagem do enunciado
-# antes de entregar. Os valores abaixo (0.8 / 0.2) sao apenas ILUSTRATIVOS.
+# Topologia conforme o diagrama do enunciado.
+#
+#   Chegadas externas (2..4) -> Fila1
+#   Fila1 -> Fila2 (0.2) | Fila3 (0.8)
+#   Fila2 -> Fila1 (0.3) | Fila3 (0.5) | saida (0.2)
+#   Fila3 -> Fila2 (0.7) | saida (0.3)
 
-semente: 123456789        # semente do gerador congruente linear
-aleatorios: 100000        # a simulacao encerra ao consumir este total
+semente: 123456789 # semente do gerador congruente linear
+aleatorios: 100000 # a simulacao encerra ao consumir este total
 primeira_chegada:
   fila: Fila1
-  tempo: 2.0              # primeiro cliente chega no tempo 2,0
+  tempo: 2.0 # primeiro cliente chega no tempo 2,0
 
 filas:
-  Fila1:                  # G/G/1, chegadas entre 2..4, atendimento entre 1..2
+  Fila1: # G/G/1, chegadas entre 2..4, atendimento entre 1..2
     servidores: 1
-    capacidade: null      # null = capacidade infinita
+    capacidade: null # null = capacidade infinita
     chegada: [2, 4]
     atendimento: [1, 2]
-    roteamento:           # <-- CONFERIR com o enunciado
-      - {destino: Fila2, probabilidade: 0.8}
-      - {destino: Fila3, probabilidade: 0.2}
+    roteamento:
+      - { destino: Fila2, probabilidade: 0.2 }
+      - { destino: Fila3, probabilidade: 0.8 }
 
-  Fila2:                  # G/G/2/5, atendimento entre 4..6
+  Fila2: # G/G/2/5, atendimento entre 4..6
     servidores: 2
     capacidade: 5
     atendimento: [4, 6]
-    # roteamento: (sem saida; cliente deixa o sistema)
+    roteamento: # o restante (0.2) sai do sistema
+      - { destino: Fila1, probabilidade: 0.3 }
+      - { destino: Fila3, probabilidade: 0.5 }
 
-  Fila3:                  # G/G/2/10, atendimento entre 5..15
+  Fila3: # G/G/2/10, atendimento entre 5..15
     servidores: 2
     capacidade: 10
     atendimento: [5, 15]
-    # roteamento: (sem saida; cliente deixa o sistema)
+    roteamento: # o restante (0.3) sai do sistema
+      - { destino: Fila2, probabilidade: 0.7 }
