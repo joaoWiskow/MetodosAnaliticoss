@@ -1,0 +1,32 @@
+Tempo global da simulacao: 75054.5148
+Numeros aleatorios utilizados: 100000
+
+Fila 1 (Fila1) - G/G/1/inf
+Clientes perdidos: 0
+Estado | Tempo acumulado | Probabilidade
+     0 |      37607.5749 |     0.501070
+     1 |      37446.9399 |     0.498930
+Soma das probabilidades: 1.000000
+
+Fila 2 (Fila2) - G/G/2/5
+Clientes perdidos: 0
+Estado | Tempo acumulado | Probabilidade
+     0 |       6991.8890 |     0.093157
+     1 |      35875.6324 |     0.477994
+     2 |      30582.2829 |     0.407468
+     3 |       1602.7929 |     0.021355
+     4 |          1.9177 |     0.000026
+Soma das probabilidades: 1.000000
+
+Fila 3 (Fila3) - G/G/2/10
+Clientes perdidos: 0
+Estado | Tempo acumulado | Probabilidade
+     0 |      36013.0826 |     0.479826
+     1 |      28971.0307 |     0.386000
+     2 |       8700.9499 |     0.115928
+     3 |       1282.1710 |     0.017083
+     4 |         83.8406 |     0.001117
+     5 |          3.4400 |     0.000046
+Soma das probabilidades: 1.000000
+
+Tempo total de simulacao: 75054.5148
