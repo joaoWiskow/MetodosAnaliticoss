@@ -51,26 +51,36 @@ Ao final, mostra o **tempo total da simulação** e a quantidade de números ale
 ## Formato do arquivo `.yml`
 
 ```yaml
-semente: 123456789          # semente do gerador congruente linear
-aleatorios: 100000          # a simulação encerra ao consumir este total
+semente: 123456789 # semente do gerador congruente linear
+aleatorios: 100000 # a simulacao encerra ao consumir este total
 primeira_chegada:
-  fila: Fila1               # fila que recebe a primeira chegada
-  tempo: 2.0                # instante da primeira chegada
+  fila: Fila1
+  tempo: 2.0 # primeiro cliente chega no tempo 2,0
 
 filas:
-  Fila1:
+  Fila1: # G/G/1, chegadas entre 2..4, atendimento entre 1..2
     servidores: 1
-    capacidade: null        # null = capacidade infinita
-    chegada: [2, 4]         # intervalo entre chegadas externas [min, max]
-    atendimento: [1, 2]     # tempo de atendimento [min, max]
-    roteamento:             # para onde o cliente vai após o atendimento
-      - {destino: Fila2, probabilidade: 0.8}
-      - {destino: Fila3, probabilidade: 0.2}
+    capacidade: null # null = capacidade infinita
+    chegada: [2, 4]
+    atendimento: [1, 2]
+    roteamento:
+      - { destino: Fila2, probabilidade: 0.2 }
+      - { destino: Fila3, probabilidade: 0.8 }
 
-  Fila2:
+  Fila2: # G/G/2/5, atendimento entre 4..6
     servidores: 2
     capacidade: 5
     atendimento: [4, 6]
+    roteamento: # o restante (0.2) sai do sistema
+      - { destino: Fila1, probabilidade: 0.3 }
+      - { destino: Fila3, probabilidade: 0.5 }
+
+  Fila3: # G/G/2/10, atendimento entre 5..15
+    servidores: 2
+    capacidade: 10
+    atendimento: [5, 15]
+    roteamento: # o restante (0.3) sai do sistema
+      - { destino: Fila2, probabilidade: 0.7 }
 ```
 
 Regras do modelo:
